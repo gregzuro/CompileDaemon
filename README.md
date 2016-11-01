@@ -22,9 +22,10 @@ Usage:
 |`-include=…` | none | Include files whose last path component matches this glob pattern. You may have multiples of this flag.|
 |`-pattern=…` | (.+\\.go&#124;.+\\.c)$ | A regular expression which matches the files to watch. The default watches *.go* and *.c* files.|
 | | | **misc** |
-|`-color=_` | false | Colorize the output of the daemon's status messages. |
-|`-log-prefix=_` | true | Prefix all child process output with stdout/stderr labels and log timestamps. |
-|`-graceful-kill=_`| false | On supported platforms, send the child process a SIGTERM to allow it to exit gracefully if possible. |
+|`-color=…` | false | Colorize the output of the daemon's status messages. |
+|`-log-prefix=…` | true | Prefix all child process output with stdout/stderr labels and log timestamps. |
+|`-graceful-kill=…`| false | On supported platforms, send the child process a SIGTERM to allow it to exit gracefully if possible. |
+|`-show-output=…`| false | Show stdout from command. |
 
 ## Examples
 

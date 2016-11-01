@@ -108,6 +108,7 @@ var (
 	flag_color        = flag.Bool("color", true, "Colorize output for CompileDaemon status messages")
 	flag_logprefix    = flag.Bool("log-prefix", true, "Print log timestamps and subprocess stderr/stdout output")
 	flag_gracefulkill = flag.Bool("graceful-kill", false, "Gracefully attempt to kill the child process by sending a SIGTERM first")
+	flag_showoutput   = flag.Bool("show-output", false, "Show stdout from command")
 
 	// initialized in main() due to custom type.
 	flag_excludedDirs  globList
@@ -155,6 +156,10 @@ func build() bool {
 		log.Println(okColor("Build ok."))
 	} else {
 		log.Println(failColor("Error while building:\n"), failColor(string(output)))
+	}
+
+	if *flag_showoutput {
+		fmt.Println(string(output))
 	}
 
 	log.Println(color.CyanString("-------------------------------------------------------------------------------------------------"))
